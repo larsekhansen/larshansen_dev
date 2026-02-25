@@ -3,6 +3,6 @@ export type GlobalStateType = {
   setTest: React.Dispatch<React.SetStateAction<string>>
 }
 
-interface StateProviderProps {
-  children: JSX.Element
+export interface StateProviderProps {
+  children: React.ReactNode
 }

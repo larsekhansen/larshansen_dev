@@ -1,4 +1,4 @@
-import styled from "styled-components/macro"
+import styled from "styled-components"
 import NavBar from "./Components/Navbar/Navbar"
 
 const AppContainer = styled.div`
@@ -8,7 +8,7 @@ const AppContainer = styled.div`
   min-height: 100vh;
 `
 
-const App = (): JSX.Element => {
+const App = () => {
   return (
     <AppContainer>
       <NavBar />

@@ -1,8 +1,8 @@
-import styled from "styled-components/macro"
+import styled from "styled-components"
 
 const CVContainer = styled.div``
 
-const CV = (): JSX.Element => {
+const CV = () => {
   return (
     <CVContainer>
       <h1>This is the CV page.</h1>

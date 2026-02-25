@@ -1,16 +1,15 @@
-import styled from "styled-components/macro"
-import shallow from "zustand/shallow"
+import styled from "styled-components"
+import { useShallow } from "zustand/shallow"
 import useStore from "../store"
 
 const HomeContainer = styled.div``
 
-const Home = (): JSX.Element => {
+const Home = () => {
   const { myStateVariable, setMyStateVariable } = useStore(
-    state => ({
+    useShallow(state => ({
       myStateVariable: state.myStateVariable,
       setMyStateVariable: state.setMyStateVariable,
-    }),
-    shallow,
+    })),
   )
 
   return (
