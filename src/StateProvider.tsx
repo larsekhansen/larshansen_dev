@@ -1,9 +1,9 @@
-import React, { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState } from "react"
 import { GlobalStateType, StateProviderProps } from "./types/StateProvider"
 
 export const GlobalState = createContext<Partial<GlobalStateType>>({})
 
-export const StateProvider = (props: StateProviderProps): JSX.Element => {
+export const StateProvider = (props: StateProviderProps) => {
   const [test, setTest] = useState("one-two")
 
   const state = {

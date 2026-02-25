@@ -1,11 +1,13 @@
-import ReactDOM from "react-dom"
-import React, { StrictMode } from "react"
+import { createRoot } from "react-dom/client"
+import { StrictMode } from "react"
 import GlobalStyles, { Theme } from "./GlobalStyles"
 import App from "./App"
 import { StateProvider } from "./StateProvider"
 import { BrowserRouter } from "react-router-dom"
 
-ReactDOM.render(
+const root = createRoot(document.getElementById("root") as HTMLElement)
+
+root.render(
   <StrictMode>
     <GlobalStyles />
     <Theme>
@@ -16,5 +18,4 @@ ReactDOM.render(
       </StateProvider>
     </Theme>
   </StrictMode>,
-  document.getElementById("root"),
 )

@@ -1,4 +1,4 @@
-import create from "zustand"
+import { create } from "zustand"
 
 type State = {
   myStateVariable: string
@@ -8,14 +8,12 @@ type State = {
   setUserPaymentId: (userPaymentId: string) => void
 }
 
-const changeMyStateVariable = (state: State) => {
-  const { myStateVariable } = state
-  return { myStateVariable: myStateVariable === "hello world" ? "hello, world!" : "hello world" }
-}
-
-const useStore = create(set => ({
+const useStore = create<State>(set => ({
   myStateVariable: "hello world",
-  setMyStateVariable: () => set(changeMyStateVariable),
+  setMyStateVariable: () =>
+    set(state => ({
+      myStateVariable: state.myStateVariable === "hello world" ? "hello, world!" : "hello world",
+    })),
   removeMyStateVariable: () => set({ myStateVariable: "" }),
   userPaymentId: "",
   setUserPaymentId: (userPaymentId: string) => set({ userPaymentId }),

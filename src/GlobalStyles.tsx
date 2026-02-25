@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components/macro"
-import { ThemeProvider } from "styled-components"
+import type { ReactNode } from "react"
+import { createGlobalStyle, ThemeProvider } from "styled-components"
 
 /** color theme **/
 
@@ -14,10 +14,10 @@ export enum theme {
 }
 
 interface Props {
-  children: JSX.Element
+  children: ReactNode
 }
 
-export const Theme = (props: Props): JSX.Element => {
+export const Theme = (props: Props) => {
   return <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
 }
 
