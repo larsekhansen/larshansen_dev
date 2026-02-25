@@ -1,11 +1,9 @@
 import { useState } from "react"
-import { Route, Routes } from "react-router-dom"
+import { Link, Route, Routes } from "react-router-dom"
 import About from "../About"
 import CV from "../CV"
 import Home from "../Home"
-import { StyledNav, StyledLink } from "./Navbar-styles"
-
-type useStateType = [number, React.Dispatch<React.SetStateAction<number>>]
+import styles from "./Navbar.module.css"
 
 const NavBar = () => {
   const pages = [
@@ -13,17 +11,22 @@ const NavBar = () => {
     { url: "/about", text: "ABOUT" },
     { url: "/cv", text: "CV" },
   ]
-  const [activePage, setActivePage]: useStateType = useState<number>(0)
+  const [activePage, setActivePage] = useState(0)
 
   return (
     <>
-      <StyledNav>
+      <nav className={styles.nav}>
         {pages.map(({ url, text }, i) => (
-          <StyledLink key={i} onClick={() => setActivePage(i)} $active={activePage === i} to={url}>
+          <Link
+            key={i}
+            onClick={() => setActivePage(i)}
+            className={activePage === i ? styles.linkActive : styles.link}
+            to={url}
+          >
             {text}
-          </StyledLink>
+          </Link>
         ))}
-      </StyledNav>
+      </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

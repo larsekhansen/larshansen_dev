@@ -1,12 +1,8 @@
-import styled from "styled-components"
-
-const AboutContainer = styled.div``
-
 const About = () => {
   return (
-    <AboutContainer>
+    <div>
       <h1>This is the about page.</h1>
-    </AboutContainer>
+    </div>
   )
 }
 

@@ -1,18 +1,11 @@
-import styled from "styled-components"
 import NavBar from "./Components/Navbar/Navbar"
-
-const AppContainer = styled.div`
-  position: relative;
-  text-align: center;
-  height: 100%;
-  min-height: 100vh;
-`
+import styles from "./App.module.css"
 
 const App = () => {
   return (
-    <AppContainer>
+    <div className={styles.app}>
       <NavBar />
-    </AppContainer>
+    </div>
   )
 }
 
